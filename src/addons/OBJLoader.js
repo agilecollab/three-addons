@@ -503,7 +503,7 @@ THREE.OBJLoader.prototype = {
     for (var i = 0, l = state.objects.length; i < l; i++) {
       var object = state.objects[i];
       var geometry = object.geometry;
-      var materials = object.materials;
+      var materials = object.materials || []; //hack
       var isLine = geometry.type === "Line";
 
       // Skip o/g line declarations that did not follow with any faces
