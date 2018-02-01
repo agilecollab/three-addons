@@ -4,6 +4,13 @@ import * as THREE from "three";
  * @author mrdoob / http://mrdoob.com/
  */
 
+// o object_name | g group_name
+var object_pattern = /^[og]\s*(.+)?/;
+// mtllib file_reference
+var material_library_pattern = /^mtllib /;
+// usemtl material_name
+var material_use_pattern = /^usemtl /;
+
 function ParserState() {
   var state = {
     objects: [],
@@ -275,13 +282,6 @@ function ParserState() {
 
 THREE.OBJLoader = function(manager) {
   this.manager = manager !== undefined ? manager : THREE.DefaultLoadingManager;
-
-  // o object_name | g group_name
-  var object_pattern = /^[og]\s*(.+)?/;
-  // mtllib file_reference
-  var material_library_pattern = /^mtllib /;
-  // usemtl material_name
-  var material_use_pattern = /^usemtl /;
 };
 
 THREE.OBJLoader.prototype = {
