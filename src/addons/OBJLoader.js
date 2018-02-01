@@ -282,6 +282,7 @@ function ParserState() {
 
 THREE.OBJLoader = function(manager) {
   this.manager = manager !== undefined ? manager : THREE.DefaultLoadingManager;
+  this.materials = []; //?
 };
 
 THREE.OBJLoader.prototype = {
