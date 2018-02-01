@@ -6,6 +6,15 @@ import * as THREE from "three";
 
 function ParserState() {
   var state = {
+    objects: [],
+    object: {},
+
+    vertices: [],
+    normals: [],
+    colors: [],
+    uvs: [],
+
+    materialLibraries: [],
     startObject: function(name, fromDeclaration) {
       // If the current object (initial from reset) is not from a g/o declaration in the parsed
       // file. We need to use it for the first parsed g/o to keep things in sync.
